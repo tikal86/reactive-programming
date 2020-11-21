@@ -1,0 +1,16 @@
+# Site settings
+#theme: jekyll-theme-cayman
+title: Code for the blog about reactive programming
+#email: tikaltikal@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  This is the homepage of code for the blog
+  https://tikal86.github.io/java/reactive-programming-introduction
+#baseurl: "/" # the subpath of your site, e.g. /blog/
+# url: "http://yourdomain.com" # the base hostname & protocol for your site
+#twitter_username: tikal86
+#github_username:  tikal86
+
+# Build settings
+markdown: kramdown
+
+#permalink: /:categories/:title
