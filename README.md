@@ -1,2 +1,2 @@
 # reactive-programming
-code and blogs about reactive programming
+code from the blog about reactive programming
