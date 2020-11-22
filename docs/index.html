@@ -34,6 +34,10 @@
             <circle class="red" cx="250" cy="100" r="20" stroke="black" />
             <text x="244" y="107" class="small">5</text>
         </g>
+        <g id="purple">
+            <circle class="purple" cx="0" cy="0" r="20" stroke="black" />
+            <text x="-6" y="7" class="small">5</text>
+        </g>
         <g>
             <line x1="20" y1="300" x2="600" y2="300" stroke="black"/>
             <line x1="560" y1="285" x2="560" y2="315" stroke="black"/>
@@ -42,16 +46,19 @@
         <rect class="operationbox" fill="white" stroke="black" x="20" y="150" width="580" height="100" />
         <text x="150" y="214" class="large">filter (x => x > 10)</text>
         <g>
-            <use href="#blue" x="150" y="200"/>
-            <text x="139" y="307" class="small">30</text>
+            <use href="#blue" x="0" y="200"/>
         </g>
         <g>
-            <use href="#green" x="200" y="200"/>
-            <text x="189" y="307" class="small">22</text>
+            <use href="#green" x="0" y="200"/>
+        </g>
+        <g>
+            <use href="#red" x="0" y="200"/>
         </g>
         <g id="use-red">
-            <use href="#red" x="244" y="200"/>
-            <text x="189" y="307" class="small">22</text>
+            <use href="#red"/>
+        </g>
+        <g id="use-purple">
+            <use href="#purple"/>
         </g>
     </svg>
     <body>
@@ -59,8 +66,10 @@
         The reactive programming <a href="https://tikal86.github.io/reactive-programming">blog</a> code
         <div id="text"></div>
         <script>
-            document.getElementById("use-red").x = 175;
-            document.getElementById("use-red").y = 157;
+            document.getElementById("use-red").x = 250;
+            document.getElementById("use-red").y = 50;
+            document.getElementById("use-purple").x = 280;
+            document.getElementById("use-purple").y = 50;
         </script>
     </body>
 </html>
