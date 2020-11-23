@@ -53,9 +53,12 @@
         <g id="use-red" x="50" y="100" fill="red" stroke="black">
             <use href="#svgCircle"/>
         </g>
+        <g id="circle2" x="50" y="200" fill="red" stroke="black">
+            <use href="#svgCircle"/>
+        </g>
         <svg id="svgCircle" viewBox="0 0 42 42" x="0" width="42">
             <circle cx="21" cy="21" r="20" class="green" stroke="black"/>
-            <text x="0" y="7" class="small">5</text>
+            <text x="21" y="21" class="small">5</text>
         </svg>
     </svg>
     <body>
@@ -68,9 +71,9 @@
             // document.getElementById("use-red").y = 50;
             // document.getElementById("use-purple").x = 280;
             // document.getElementById("use-purple").y = 50;
-            document.getElementById("svgCircle").y = 100;
+            // document.getElementById("svgCircle").y = 100;
             const moveCircle = (id) => {
-                id = 'svgCircle';
+                // id = 'circle2';
                 let circleNode = document.getElementById(id);
                 console.log(`Starting to move circle`);
                 let startTime = 0;
@@ -90,8 +93,8 @@
                 }
                 window.requestAnimationFrame(animateStep);
             }
-            document.getElementById('start-button').addEventListener('click', moveCircle());
-            document.getElementById('start-button2').addEventListener('click', moveCircle('use-red'));
+            document.getElementById('start-button').addEventListener('click', moveCircle('use-red'));
+            document.getElementById('start-button2').addEventListener('click', moveCircle('circle2'));
         </script>
     </body>
 </html>
