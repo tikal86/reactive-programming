@@ -60,21 +60,41 @@
         <g id="use-purple">
             <use href="#purple"/>
         </g>
-        <svg id="svgCircle" viewBox="0 0 42 42" x="200" width="100">
+        <svg id="svgCircle" viewBox="0 0 42 42" x="0" width="100">
             <circle cx="21" cy="21" r="20" />
         </svg>
     </svg>
     <body>
         <h1>Reactive Programming</h1>
         The reactive programming <a href="https://tikal86.github.io/reactive-programming">blog</a> code
-        <div id="text"></div>
+        <button id="start-button"></button>
+        <button id="start-button2"></button>
         <script>
-            document.getElementById("use-red").x = 250;
-            document.getElementById("use-red").y = 50;
-            document.getElementById("use-purple").x = 280;
-            document.getElementById("use-purple").y = 50;
-            document.getElementById("svgCircle").x = 180;
+            // document.getElementById("use-red").x = 250;
+            // document.getElementById("use-red").y = 50;
+            // document.getElementById("use-purple").x = 280;
+            // document.getElementById("use-purple").y = 50;
+            let circleNode = document.getElementById("svgCircle");
             document.getElementById("svgCircle").y = 100;
+            const moveCircle = () => {
+                let startTime = 0;
+                const endTime = 1000;
+                const animateStep = (timestamp) => {
+                    if (!startTime) {
+                        startTime = timestamp;
+                    }
+                    // progress goes from 0 to 1 over 1 sec
+                    const progress = (timestamp - startTime)/endTime;
+                    // move right 100 px
+                    circleNode.setAttributeNS(null, 'x', 100 * progress);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(animateStep);
+                    }
+                }
+                window.requestAnimationFrame(animateStep);
+            }
+            document.getElementById('#start-button').click(moveCircle);
+            document.getElementById('#start-button2').addEventListener('click', moveCircle);
         </script>
     </body>
 </html>
