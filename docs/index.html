@@ -1,6 +1,6 @@
 <html>
     <!-- this pages is hosted at https://tikal86.github.io/javascript.html -->
-    <svg viewBox="0 0 660 340" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 660 340" width="1024" height="512" xmlns="http://www.w3.org/2000/svg">
         <style>
             /* Note that the color of the text is set with the    *
             * fill property, the color property is for HTML only */
@@ -18,48 +18,41 @@
             <line x1="560" y1="85" x2="560" y2="115" stroke="black"/>
             <polygon points="600,90 630,100 600,110" fill="black" stroke="black"/>
         </g>
-        <g id="yellow">
+        <g id="timeCircle">
+            <circle cx="0" cy="0" r="5" stroke="black" />
+        </g>
+        <g id="yellow" style="display: none;">
             <circle class="yellowish" cx="100" cy="100" r="20" stroke="black" />
             <text x="94" y="107" class="small">2</text>
         </g>
-        <g id="blue">
-            <circle class="blue" cx="150" cy="100" r="20" stroke="black" />
-            <text x="139" y="107" class="small">30</text>
+        <g id="blue" style="display: none;">
+            <circle class="blue" cx="200" cy="100" r="20" stroke="black" />
+            <text x="189" y="107" class="small">30</text>
         </g>
-        <g id="green">
-            <circle class="green" cx="200" cy="100" r="20" stroke="black" />
-            <text x="189" y="107" class="small">22</text>
+        <g id="green" style="display: none;">
+            <circle class="green" cx="300" cy="100" r="20" stroke="black" />
+            <text x="289" y="107" class="small">22</text>
         </g>
-        <g id="red">
-            <circle class="red" cx="250" cy="100" r="20" stroke="black" />
-            <text x="244" y="107" class="small">5</text>
+        <g id="red" style="display: none;">
+            <circle class="red" cx="400" cy="100" r="20" stroke="black" />
+            <text x="394" y="107" class="small">5</text>
         </g>
         <g>
             <line x1="20" y1="300" x2="600" y2="300" stroke="black"/>
             <line x1="560" y1="285" x2="560" y2="315" stroke="black"/>
             <polygon points="600,290 630,300 600,310" fill="black" stroke="black"/>
         </g>
-        <rect class="operationbox" fill="white" stroke="black" x="20" y="150" width="580" height="100" />
+        <rect id="filter" class="operationbox" fill="white" stroke="black" x="20" y="150" width="580" height="100" />
         <text x="150" y="214" class="large">filter (x => x > 10)</text>
+        <g>
+            <use id="time" href="#timeCircle" x="0" y="100"/>
+        </g>
         <g>
             <use href="#blue" x="0" y="200"/>
         </g>
         <g>
             <use href="#green" x="0" y="200"/>
         </g>
-        <g>
-            <use href="#red" x="0" y="200"/>
-        </g>
-        <g id="use-red" x="50" y="100" fill="red" stroke="black">
-            <use href="#svgCircle"/>
-        </g>
-        <g id="circle2" x="50" y="200" fill="red" stroke="black">
-            <use href="#svgCircle"/>
-        </g>
-        <svg id="svgCircle" viewBox="0 0 42 42" x="0" width="42">
-            <circle cx="21" cy="21" r="20" class="green" stroke="black"/>
-            <text x="21" y="21" class="small">5</text>
-        </svg>
     </svg>
     <body>
         <h1>Reactive Programming</h1>
@@ -67,34 +60,67 @@
         <button id="start-button">Start svgCircle</button>
         <button id="start-button2">Move Circle use-red</button>
         <script>
-            // document.getElementById("use-red").x = 250;
-            // document.getElementById("use-red").y = 50;
-            // document.getElementById("use-purple").x = 280;
-            // document.getElementById("use-purple").y = 50;
-            // document.getElementById("svgCircle").y = 100;
-            const moveCircle = (id) => {
-                // id = 'circle2';
-                let circleNode = document.getElementById(id);
-                console.log(`Starting to move circle`);
+            
+            let circleNode = document.getElementById('time');
+            let yellowNode = document.getElementById('yellow');
+            let blueNode = document.getElementById('blue');
+            let redNode = document.getElementById('red');
+            let greenNode = document.getElementById('green');
+            let filterNode = document.getElementById('filter');
+            const button = document.getElementById('start-button2');
+            const moveCircle = (event) => {
                 let startTime = 0;
-                const endTime = 1000;
+                const endTime = 15000;
                 const animateStep = (timestamp) => {
                     if (!startTime) {
                         startTime = timestamp;
                     }
-                    // progress goes from 0 to 1 over 1 sec
+                    // progress goes from 0 to 5 over 15 sec
                     const progress = (timestamp - startTime)/endTime;
                     console.log(`Animating progress is ${progress}`);
-                    // move right 100 px
-                    circleNode.setAttributeNS(null, 'x', 100 * progress);
+                    // move right 560 px
+                    circleNode.setAttributeNS(null, 'x', 559 * progress);
+                    // switch cases between 0 and 100
+                    switch (Math.floor(progress * 100)) {
+                        case 13: 
+                            yellowNode.setAttributeNS(null, 'style', 'display:block');
+                            filterNode.setAttributeNS(null, 'fill', 'red');
+                        break;
+                        case 22: 
+                            filterNode.setAttributeNS(null, 'fill', 'white');
+                        break;
+                        case 31: 
+                            filterNode.setAttributeNS(null, 'fill', 'green');
+                            blueNode.setAttributeNS(null, 'style', 'display:block');
+                        break;
+                        case 40: 
+                            filterNode.setAttributeNS(null, 'fill', 'white');
+                        break;
+                        case 49: 
+                            filterNode.setAttributeNS(null, 'fill', 'green');
+                            greenNode.setAttributeNS(null, 'style', 'display:block');
+                        break;
+                        case 58: 
+                            filterNode.setAttributeNS(null, 'fill', 'white');
+                        break;
+                        case 67: 
+                            filterNode.setAttributeNS(null, 'fill', 'red');
+                            redNode.setAttributeNS(null, 'style', 'display:block');
+                        break;
+                        case 76: 
+                            filterNode.setAttributeNS(null, 'fill', 'white');
+                        break;
+                    }
                     if (progress < 1) {
                         window.requestAnimationFrame(animateStep);
                     }
                 }
                 window.requestAnimationFrame(animateStep);
             }
-            document.getElementById('start-button').addEventListener('click', moveCircle('use-red'));
-            document.getElementById('start-button2').addEventListener('click', moveCircle('circle2'));
+            document.getElementById('start-button').addEventListener('click', moveCircle);
+            document.getElementById('start-button2').addEventListener('click', event => {
+  button.innerHTML = `Click count: ${event.detail}`;
+});
         </script>
     </body>
 </html>
