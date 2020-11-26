@@ -79,6 +79,7 @@
             </g>
             <rect id="filter" class="operationbox" fill="white" stroke="black" x="20" y="150" width="580" height="100" />
             <text x="150" y="214" class="large">filter (x => x > 10)</text>
+            <text x="30" y="207" class="small">Operation</text>
             <g id="subscribe" style="display: none;">
                 <rect class="operationbox" fill="yellow" stroke="black" x="10" y="260" width="100" height="30" />
                 <text x="15" y="280" class="small">subscribe</text>
@@ -104,8 +105,7 @@
             </g>
             <text x="10" y="350" class="small">Observer</text>
         </svg>
-            <script>
-            
+        <script>
             const circleNode = document.getElementById('time');
             const yellowNode = document.getElementById('yellow');
             const blueNode = document.getElementById('blue');
@@ -121,17 +121,7 @@
             const subscribeNode = document.getElementById('subscribe');
             const button = document.getElementById('start-button2');
             const moveCircle = (event) => {
-                subscribeNode.setAttributeNS(null, 'style', 'display:none');
-                next1Node.setAttributeNS(null, 'style', 'display:none');
-                next2Node.setAttributeNS(null, 'style', 'display:none');
-                next3Node.setAttributeNS(null, 'style', 'display:none');
-                next4Node.setAttributeNS(null, 'style', 'display:none');
-                completeNode.setAttributeNS(null, 'style', 'display:none');
-                complete2Node.setAttributeNS(null, 'style', 'display:none');
-                yellowNode.setAttributeNS(null, 'style', 'display:none');
-                blueNode.setAttributeNS(null, 'style', 'display:none');
-                greenNode.setAttributeNS(null, 'style', 'display:none');
-                redNode.setAttributeNS(null, 'style', 'display:none');
+                hideAllNodes();
                 let startTime = 0;
                 const endTime = 15000;
                 const animateStep = (timestamp) => {
@@ -146,60 +136,58 @@
                     // switch cases between 0 and 100
                     switch (Math.floor(progress * 100)) {
                         case 2:
-                            subscribeNode.setAttributeNS(null, 'style', 'display:block');
+                            showNode(subscribeNode);
                         break;
                         case 9:
-                            subscribeNode.setAttributeNS(null, 'style', 'display:none');
+                            hideNode(subscribeNode);
                         break;
                         case 12:
-                            next1Node.setAttributeNS(null, 'style', 'display:block');
+                            showNode(next1Node);
                         break;
                         case 13:
-                            yellowNode.setAttributeNS(null, 'style', 'display:block');
-                            filterNode.setAttributeNS(null, 'fill', 'red');
-                        break;
-                        case 16:
-                            next1Node.setAttributeNS(null, 'style', 'display:none');
+                            showNode(yellowNode);
+                            fillNode('red');
                         break;
                         case 22:
-                            filterNode.setAttributeNS(null, 'fill', 'white');
+                            fillNode('white');
+                            hideNode(next1Node);
                         break;
                         case 30:
-                            next2Node.setAttributeNS(null, 'style', 'display:block');
+                            showNode(next2Node);
                         break;
                         case 31:
-                            filterNode.setAttributeNS(null, 'fill', 'green');
-                            blueNode.setAttributeNS(null, 'style', 'display:block');
+                            fillNode('green');
+                            showNode(blueNode);
                         break;
                         case 40:
-                            filterNode.setAttributeNS(null, 'fill', 'white');
-                            next2Node.setAttributeNS(null, 'style', 'display:none');
+                            fillNode('white');
+                            hideNode(next2Node);
                         break;
                         case 48:
-                            next3Node.setAttributeNS(null, 'style', 'display:block');
+                        showNode(next3Node);
                         break;
                         case 49:
-                            filterNode.setAttributeNS(null, 'fill', 'green');
-                            greenNode.setAttributeNS(null, 'style', 'display:block');
+                            fillNode('green');
+                            showNode(greenNode);
                         break;
                         case 58:
-                            filterNode.setAttributeNS(null, 'fill', 'white');
-                            next3Node.setAttributeNS(null, 'style', 'display:none');
+                            fillNode('white');
+                            hideNode(next3Node);
                         break;
                         case 66:
-                            next4Node.setAttributeNS(null, 'style', 'display:block');
+                            showNode(next4Node);
                         break;
                         case 67:
-                            filterNode.setAttributeNS(null, 'fill', 'red');
-                            redNode.setAttributeNS(null, 'style', 'display:block');
+                            fillNode('red');
+                            showNode(redNode);
                         break;
                         case 76:
-                            filterNode.setAttributeNS(null, 'fill', 'white');
-                            next4Node.setAttributeNS(null, 'style', 'display:none');
+                            fillNode('white');
+                            hideNode(next4Node);
                         break;
                         case 99:
-                        completeNode.setAttributeNS(null, 'style', 'display:block');
-                        complete2Node.setAttributeNS(null, 'style', 'display:block');
+                            showNode(completeNode);
+                            showNode(complete2Node);
                         break;
                     }
                     if (progress < 1) {
@@ -208,6 +196,22 @@
                 }
                 window.requestAnimationFrame(animateStep);
             }
+            const hideAllNodes = () => {
+                hideNode(subscribeNode);
+                hideNode(next1Node);
+                hideNode(next2Node);
+                hideNode(next3Node);
+                hideNode(next4Node);
+                hideNode(completeNode);
+                hideNode(complete2Node);
+                hideNode(yellowNode);
+                hideNode(blueNode);
+                hideNode(greenNode);
+                hideNode(redNode);
+            }
+            const hideNode = (node) => node.setAttributeNS(null, 'style', 'display:none');
+            const showNode = (node) => node.setAttributeNS(null, 'style', 'display:block');
+            const fillNode = (color) => filterNode.setAttributeNS(null, 'fill', color);
             document.getElementById('start-button').addEventListener('click', moveCircle);
         </script>
     </body>
