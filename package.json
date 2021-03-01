@@ -1,0 +1,39 @@
+{
+  "name": "reactive-programming",
+  "version": "1.0.0",
+  "description": "reactive programming blog code",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev-node": "NODE_ENV=dev node ./src/index.js",
+    "dev": "NODE_ENV=dev parcel ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tikal86/reactive-programming.git"
+  },
+  "keywords": [
+    "reactive",
+    "programming",
+    "rx",
+    "rxjs"
+  ],
+  "author": "Andre Hogenkamp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tikal86/reactive-programming/issues"
+  },
+  "homepage": "https://github.com/tikal86/reactive-programming#readme",
+  "dependencies": {
+    "apexcharts": "^3.25.0",
+    "koa": "^2.13.1",
+    "koa-static": "^5.0.0",
+    "rxjs": "^6.6.6"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
