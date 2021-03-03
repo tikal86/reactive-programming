@@ -1,9 +1,16 @@
+// gekozen voor ApexCharts
+// Andere opties: 
+// https://www.chartjs.org/docs/latest/charts/line.html
+// http://gionkunz.github.io/chartist-js/
+// https://canvasjs.com/javascript-charts/
+// https://canvasjs.com/html5-javascript-line-chart/
+
 import ApexCharts from 'apexcharts';
 
 var options = {
     series: [{
       name: "Desktops",
-      data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+      data: []
   }],
     chart: {
     height: 350,
@@ -33,5 +40,9 @@ var options = {
   }
   };
 
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  var chart = new ApexCharts(document.querySelector("#chartId"), options);
   chart.render();
+  
+  module.exports = {
+      chart: chart
+  }
