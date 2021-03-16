@@ -78,11 +78,14 @@ var options = {
   var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
   chart1.render();
   
+  var chart2 = new ApexCharts(document.querySelector("#chart2"), options);
+  chart2.render();
 
   var chart3 = new ApexCharts(document.querySelector("#chart3"), options);
   chart3.render();
 
   module.exports = {
     chart1: chart1,
+    chart2: chart2,
     chart3: chart3
   }
