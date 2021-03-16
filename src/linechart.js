@@ -22,6 +22,7 @@ var options = {
   dataLabels: {
     enabled: false
   },
+  colors: ["#8B5CF6"],
   stroke: {
     curve: 'straight'
   },
@@ -36,13 +37,52 @@ var options = {
     },
   },
   xaxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  },
+  annotations: {
+    xaxis: [
+      {
+        x: 'Apr',
+        borderColor: '#775DD0',
+        label: {
+          style: {
+            color: '#7c3aed',
+          },
+          text: 'X-axis annotation - Apr'
+        }
+      },
+      {
+        x: 'Aug',
+        borderColor: '#775DD0',
+        label: {
+          style: {
+            color: '#7c3ced',
+          },
+          text: 'X-axis annotation - Aug'
+        }
+      },
+      {
+        x: 'Dec',
+        borderColor: '#775DD0',
+        label: {
+          style: {
+            color: '#7c3ced',
+          },
+          text: 'X-axis annotation - Dec'
+        }
+      }
+    ]
   }
   };
 
-  var chart = new ApexCharts(document.querySelector("#chartId"), options);
-  chart.render();
+  var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
+  chart1.render();
   
+
+  var chart3 = new ApexCharts(document.querySelector("#chart3"), options);
+  chart3.render();
+
   module.exports = {
-      chart: chart
+    chart1: chart1,
+    chart3: chart3
   }
