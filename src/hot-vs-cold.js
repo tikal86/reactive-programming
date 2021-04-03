@@ -1,5 +1,5 @@
 import { of, interval, zip } from "rxjs";
-import { map, delay, filter } from "rxjs/operators";
+import { map, delay, filter, skip, publish } from "rxjs/operators";
 import {chart1, chart2, chart3} from './linechart';
 
 const interval$ = interval(100);
@@ -14,18 +14,22 @@ delayedrange$.subscribe(data => {
 chart1.showSeries('Desktops');
 
 console.log(`type of chart: ${chart1}`);
-delayedrange$.subscribe(data => {
-    console.log(`appending data to chart 2: ${data}`);
-    chart2.appendData([{
-        data: [data]
-      }]);
-});
+delayedrange$
+    .pipe(delay(1000))
+    .subscribe(data => {
+        console.log(`appending data to chart 2: ${data}`);
+        chart2.appendData([{
+            data: [data]
+        }]);
+    });
 chart2.showSeries('Desktops');
 
-delayedrange$.subscribe(data => {
-    console.log(`appending data to chart 3: ${data}`);
-    chart3.appendData([{
-        data: [data]
-      }]);
-});
+delayedrange$
+    .pipe(delay(2000))
+    .subscribe(data => {
+        console.log(`appending data to chart 3: ${data}`);
+        chart3.appendData([{
+            data: [data]
+        }]);
+    });
 chart3.showSeries('Desktops');
