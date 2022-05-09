@@ -1,6 +1,6 @@
-import { of, interval, zip } from "rxjs";
-import { map, delay, filter, skip, publish } from "rxjs/operators";
-import {chart1, chart2, chart3} from './linechart';
+import { of, interval, zip } from "../node_modules/rxjs/esm/es5/rxjs.min.js";
+import { map, delay, filter, skip, publish } from "../node_modules/rxjs/esm/es5/rxjs-operators.min.js";
+import {chart1, chart2, chart3} from './linechart.js';
 
 const interval$ = interval(100);
 const range$ = of(2,4,6,8,2,4,6,8,2,4,6,8);

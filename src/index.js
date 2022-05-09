@@ -3,7 +3,7 @@
 const Koa = require('koa');
 const serve = require('koa-static');
 const app = new Koa();
-const root = './src';
+const root = './';
 const opts = {};
 
 // logger

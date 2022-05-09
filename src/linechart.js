@@ -5,7 +5,7 @@
 // https://canvasjs.com/javascript-charts/
 // https://canvasjs.com/html5-javascript-line-chart/
 
-import ApexCharts from 'apexcharts';
+import ApexCharts from '../node_modules/apexcharts/dist/apexcharts.esm.js';
 
 const chartHeight = 350;
 const series = [{
@@ -144,8 +144,8 @@ chart3.id = 'chart-3';
 chart3.group = 'social3',
 chart3.render();
 
-module.exports = {
-    chart1: chart1,
-    chart2: chart2,
-    chart3: chart3
+export {
+    chart1,
+    chart2,
+    chart3
 }
