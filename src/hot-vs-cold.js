@@ -4,6 +4,9 @@ import {chart1, chart2, chart3} from './linechart.js';
 
 const interval$ = interval(100);
 const range$ = of(2,4,6,8,2,4,6,8,2,4,6,8);
+const hotObservableSource = () => {
+
+}
 const delayedrange$ = zip(interval$, range$, (interval, number) => number);
 delayedrange$.subscribe(data => {
     console.log(`appending data to chart 1: ${data}`);

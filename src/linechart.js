@@ -7,7 +7,7 @@
 
 import ApexCharts from '../node_modules/apexcharts/dist/apexcharts.esm.js';
 
-const chartHeight = 350;
+const chartHeight = 200;
 const series = [{
     name: "Desktops",
     data: []
@@ -60,7 +60,7 @@ const annotations = {
     ]
 };
 
-var options = {
+const options = {
     series: series,
     chart: chartDefinition,
     dataLabels: {
@@ -81,12 +81,12 @@ var options = {
     annotations: annotations
 };
 
-var chart1 = new ApexCharts(document.querySelector("#chart1"), options);
+const chart1 = new ApexCharts(document.querySelector("#chart1"), options);
 chart1.id = 'chart-1';
 chart1.group = 'social1',
 chart1.render();
 
-var options2 = {
+const options2 = {
     series: [{
         name: "Desktops",
         data: []
@@ -110,12 +110,12 @@ var options2 = {
     annotations: annotations
 };
 
-var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+const chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
 chart2.id = 'chart-2';
 chart2.group = 'social2',
 chart2.render();
 
-var options3 = {
+const options3 = {
     series: [{
         name: "Desktops",
         data: []
@@ -139,13 +139,43 @@ var options3 = {
     annotations: annotations
 };
 
-var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
+const chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
 chart3.id = 'chart-3';
 chart3.group = 'social3',
 chart3.render();
 
+const options4 = {
+    series: [{
+        name: "Desktops",
+        data: []
+    }],
+    chart: chartDefinition,
+    dataLabels: {
+        enabled: false
+    },
+    colors: ["#8B5CF6"],
+    stroke: {
+        curve: 'straight'
+    },
+    title: {
+        text: 'Product Trends by Month',
+        align: 'left'
+    },
+    grid: gridDefinition,
+    xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    },
+    annotations: annotations
+};
+
+const chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
+chart4.id = 'chart-4';
+chart4.group = 'social3',
+    chart4.render();
+
 export {
     chart1,
     chart2,
-    chart3
+    chart3,
+    chart4
 }
