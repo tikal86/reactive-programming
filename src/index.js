@@ -3,7 +3,7 @@
 const Koa = require('koa');
 const serve = require('koa-static');
 const app = new Koa();
-const root = '/';
+const root = './src';
 const opts = {};
 
 // logger
@@ -25,6 +25,10 @@ app.use(async (ctx, next) => {
   ctx.set('X-Response-Time', `${ms}ms`);
 });
 
-// response
-
+// // response
+//
+// app.use(async ctx => {
+//   ctx.body = 'Hello World 2';
+// });
+//
 app.listen(8000);
