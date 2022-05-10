@@ -18,6 +18,7 @@ const gridDefinition = {
         opacity: 0.5
     },
 };
+const categories = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 const chartDefinition = {
     height: chartHeight,
     type: 'line',
@@ -42,13 +43,14 @@ const options = {
     },
     grid: gridDefinition,
     xaxis: {
-        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        categories: categories,
     }
 };
 
 const chart1 = new ApexCharts(document.querySelector("#chart1"), options);
 chart1.id = 'chart-1';
-chart1.group = 'social1',
+chart1.group = 'social1';
+chart1.animations = false;
 chart1.render();
 
 const options2 = {
@@ -70,7 +72,7 @@ const options2 = {
     },
     grid: gridDefinition,
     xaxis: {
-        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        categories: categories,
     }
 };
 
@@ -98,7 +100,7 @@ const options3 = {
     },
     grid: gridDefinition,
     xaxis: {
-        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        categories: categories,
     }
 };
 
@@ -110,7 +112,7 @@ chart3.render();
 const options4 = {
     series: [{
         name: "Observed values",
-        data: []
+        data: [[0,0], [1,0], [2,0], [3,0], [4,0], [5,0], [6,0], [7,0], [8,0], [9,0], [10,0], [11,0], [12,0]]
     }],
     chart: chartDefinition,
     dataLabels: {
@@ -121,12 +123,12 @@ const options4 = {
         curve: 'straight'
     },
     title: {
-        text: 'Hot observable, subscribed after 1 second',
+        text: 'Hot observable, subscribed after 0.5 second',
         align: 'left'
     },
     grid: gridDefinition,
     xaxis: {
-        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        categories: categories,
     }
 };
 
