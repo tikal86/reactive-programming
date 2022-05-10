@@ -18,7 +18,6 @@ const gridDefinition = {
         opacity: 0.5
     },
 };
-const categories = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 const chartDefinition = {
     height: chartHeight,
     type: 'line',
@@ -33,7 +32,7 @@ const options = {
     dataLabels: {
         enabled: false
     },
-    colors: ["#8B5CF6"],
+    colors: ["#AED6F1"],
     stroke: {
         curve: 'straight'
     },
@@ -41,10 +40,7 @@ const options = {
         text: 'Cold observable, immediately subscribed',
         align: 'left'
     },
-    grid: gridDefinition,
-    xaxis: {
-        categories: categories,
-    }
+    grid: gridDefinition
 };
 
 const chart1 = new ApexCharts(document.querySelector("#chart1"), options);
@@ -62,18 +58,15 @@ const options2 = {
     dataLabels: {
         enabled: false
     },
-    colors: ["#8B5CF6"],
+    colors: ["#AED6F1"],
     stroke: {
         curve: 'straight'
     },
     title: {
-        text: 'Cold observable, subscribed after 1 second',
+        text: 'Cold observable, subscribed after 2.5 seconds',
         align: 'left'
     },
-    grid: gridDefinition,
-    xaxis: {
-        categories: categories,
-    }
+    grid: gridDefinition
 };
 
 const chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
@@ -90,7 +83,7 @@ const options3 = {
     dataLabels: {
         enabled: false
     },
-    colors: ["#8B5CF6"],
+    colors: ["#e74c3c"],
     stroke: {
         curve: 'straight'
     },
@@ -98,10 +91,7 @@ const options3 = {
         text: 'Hot observable, immediately subscribed',
         align: 'left'
     },
-    grid: gridDefinition,
-    xaxis: {
-        categories: categories,
-    }
+    grid: gridDefinition
 };
 
 const chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
@@ -118,18 +108,15 @@ const options4 = {
     dataLabels: {
         enabled: false
     },
-    colors: ["#8B5CF6"],
+    colors: ["#e74c3c"],
     stroke: {
         curve: 'straight'
     },
     title: {
-        text: 'Hot observable, subscribed after 0.5 second',
+        text: 'Hot observable, subscribed after 2.5 seconds',
         align: 'left'
     },
-    grid: gridDefinition,
-    xaxis: {
-        categories: categories,
-    }
+    grid: gridDefinition
 };
 
 const chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
