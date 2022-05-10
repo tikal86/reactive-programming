@@ -9,7 +9,7 @@ import ApexCharts from '../node_modules/apexcharts/dist/apexcharts.esm.js';
 
 const chartHeight = 200;
 const series = [{
-    name: "Desktops",
+    name: "Observed values",
     data: []
 }];
 const gridDefinition = {
@@ -25,40 +25,6 @@ const chartDefinition = {
       enabled: false
     }
 };
-const annotations = {
-    xaxis: [
-      {
-        x: 'Apr',
-        borderColor: '#775DD0',
-        label: {
-          style: {
-            color: '#7c3aed',
-          },
-          text: 'X-axis annotation - Apr'
-        }
-      },
-      {
-        x: 'Aug',
-        borderColor: '#775DD0',
-        label: {
-          style: {
-            color: '#7c3ced',
-          },
-          text: 'X-axis annotation - Aug'
-        }
-      },
-      {
-        x: 'Dec',
-        borderColor: '#775DD0',
-        label: {
-          style: {
-            color: '#7c3ced',
-          },
-          text: 'X-axis annotation - Dec'
-        }
-      }
-    ]
-};
 
 const options = {
     series: series,
@@ -71,14 +37,13 @@ const options = {
         curve: 'straight'
     },
     title: {
-        text: 'Product Trends by Month',
+        text: 'Cold observable, immediately subscribed',
         align: 'left'
     },
     grid: gridDefinition,
     xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    },
-    annotations: annotations
+        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+    }
 };
 
 const chart1 = new ApexCharts(document.querySelector("#chart1"), options);
@@ -88,7 +53,7 @@ chart1.render();
 
 const options2 = {
     series: [{
-        name: "Desktops",
+        name: "Observed values",
         data: []
     }],
     chart: chartDefinition,
@@ -100,24 +65,23 @@ const options2 = {
         curve: 'straight'
     },
     title: {
-        text: 'Product Trends by Month',
+        text: 'Cold observable, subscribed after 1 second',
         align: 'left'
     },
     grid: gridDefinition,
     xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    },
-    annotations: annotations
+        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+    }
 };
 
 const chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
 chart2.id = 'chart-2';
-chart2.group = 'social2',
+chart2.group = 'social2';
 chart2.render();
 
 const options3 = {
     series: [{
-        name: "Desktops",
+        name: "Observed values",
         data: []
     }],
     chart: chartDefinition,
@@ -129,24 +93,23 @@ const options3 = {
         curve: 'straight'
     },
     title: {
-        text: 'Product Trends by Month',
+        text: 'Hot observable, immediately subscribed',
         align: 'left'
     },
     grid: gridDefinition,
     xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    },
-    annotations: annotations
+        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+    }
 };
 
 const chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
 chart3.id = 'chart-3';
-chart3.group = 'social3',
+chart3.group = 'social3';
 chart3.render();
 
 const options4 = {
     series: [{
-        name: "Desktops",
+        name: "Observed values",
         data: []
     }],
     chart: chartDefinition,
@@ -158,20 +121,19 @@ const options4 = {
         curve: 'straight'
     },
     title: {
-        text: 'Product Trends by Month',
+        text: 'Hot observable, subscribed after 1 second',
         align: 'left'
     },
     grid: gridDefinition,
     xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    },
-    annotations: annotations
+        categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+    }
 };
 
 const chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
 chart4.id = 'chart-4';
-chart4.group = 'social3',
-    chart4.render();
+chart4.group = 'hot2';
+chart4.render();
 
 export {
     chart1,
