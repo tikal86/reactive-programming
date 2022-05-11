@@ -45,8 +45,6 @@ const options = {
 
 const chart1 = new ApexCharts(document.querySelector("#chart1"), options);
 chart1.id = 'chart-1';
-chart1.group = 'social1';
-chart1.animations = false;
 chart1.render();
 
 const options2 = {
@@ -71,7 +69,6 @@ const options2 = {
 
 const chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
 chart2.id = 'chart-2';
-chart2.group = 'social2';
 chart2.render();
 
 const options3 = {
@@ -96,13 +93,12 @@ const options3 = {
 
 const chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
 chart3.id = 'chart-3';
-chart3.group = 'social3';
 chart3.render();
 
 const options4 = {
     series: [{
         name: "Observed values",
-        data: [[0,0], [1,0], [2,0], [3,0], [4,0], [5,0], [6,0], [7,0], [8,0], [9,0], [10,0], [11,0], [12,0]]
+        data: []
     }],
     chart: chartDefinition,
     dataLabels: {
@@ -121,12 +117,61 @@ const options4 = {
 
 const chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
 chart4.id = 'chart-4';
-chart4.group = 'hot2';
 chart4.render();
+
+const options5 = {
+    series: [{
+        name: "Observed values",
+        data: []
+    }],
+    chart: chartDefinition,
+    dataLabels: {
+        enabled: false
+    },
+    colors: ["#e59866"],
+    stroke: {
+        curve: 'straight'
+    },
+    title: {
+        text: 'Warm observable, subscribed after 0.5 seconds',
+        align: 'left'
+    },
+    grid: gridDefinition
+};
+
+const chart5 = new ApexCharts(document.querySelector("#chart5"), options5);
+chart5.id = 'chart-5';
+chart5.render();
+
+const options6 = {
+    series: [{
+        name: "Observed values",
+        data: []
+    }],
+    chart: chartDefinition,
+    dataLabels: {
+        enabled: false
+    },
+    colors: ["#e59866"],
+    stroke: {
+        curve: 'straight'
+    },
+    title: {
+        text: 'Warm observable, subscribed after 2.5 seconds',
+        align: 'left'
+    },
+    grid: gridDefinition
+};
+
+const chart6 = new ApexCharts(document.querySelector("#chart6"), options6);
+chart6.id = 'chart-6';
+chart6.render();
 
 export {
     chart1,
     chart2,
     chart3,
-    chart4
+    chart4,
+    chart5,
+    chart6
 }

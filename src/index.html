@@ -1,25 +1,27 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <!-- ... -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="./tailwind.css" rel="stylesheet">
+    <title>Reactive programming</title>
+    <!-- ... -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./tailwind.css" rel="stylesheet">
 </head>
-<body>
-    <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-        <div class="relative py-3 sm:mx-auto w-full">
-    <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20 m-9">
+<body class="bg-gray-200 p-4">
+    <div class="bg-gray-100 m-auto p-4 w-1/2 rounded-lg">
         <div class="grid grid-cols-12">
-            <div class="text-4xl col-span-4 text-purple-600 bg-opacity-50">
+            <div class="text-4xl col-span-6 text-purple-600 bg-opacity-50">
                 <h1>Reactive Programming</h1>
             </div>
             <br/>
             <br/>
             <br/>
             <br/>
-            <div class="col-start-2 col-span-3 divide-y divide-black py-4">
-                <a href="https://tikal86.github.io/java/reactive-programming-introduction"><div class="purple-link">Introduction</div></a>
+            <div class="col-start-2 col-span-8 divide-y divide-black py-4">
+                <a href="https://tikal86.github.io/java/reactive-programming-introduction"><div class="bg-purple-600 bg-opacity-30 p-2">Introduction</div></a>
+                <br/>
+                <br/>
+                <a href="https://github.com/tikal86/reactive-programming"><div class="bg-purple-600 bg-opacity-30 p-2">Code</div></a>
                 <br/>
                 <br/>
                 <a href="./hot-vs-cold.html"><div class="bg-purple-600 bg-opacity-30 p-2">Hot versus cold observables</div></a>
@@ -28,30 +30,21 @@
                 <a href="./unicast-vs-multicast.html"><div class="bg-purple-600 bg-opacity-30 p-2">Unicast versus multicast observables</div></a>
                 <br/>
                 <br/>
-                <a href="/observables-vs-subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">Observables-subjects</div></a>
+                <a href="./observables-vs-subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">Observables versus subjects</div></a>
                 <br/>
                 <br/>
-                <a href="/subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">Subject</div></a>
+                <a href="./subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">Subject</div></a>
                 <br/>
                 <br/>
-                <a href="/behavioral-subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">BehavioralSubject</div></a>
+                <a href="./behavioral-subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">BehavioralSubject</div></a>
                 <br/>
                 <br/>
-                <a href="/replay-subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">ReplaySubject</div></a>
+                <a href="./replay-subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">ReplaySubject</div></a>
                 <br/>
                 <br/>
-                <a href="/async-subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">AsyncSubject</div></a>
+                <a href="./async-subject.html"><div class="bg-purple-600 bg-opacity-30 p-2">AsyncSubject</div></a>
             </div>
         </div>
     </div>
-</div>
-</div>
-        <style>
-            .purple-link {
-                --tw-bg-opacity: 0.3;
-                background-color: rgba(124, 58, 237, var(--tw-bg-opacity));
-                padding: 8px;
-            }
-        </style>
     </body>
 </html>
