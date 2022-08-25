@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev-node": "NODE_ENV=dev node ./src/index.js",
+    "dev-node": "NODE_ENV=dev node ./src/index.js & firefox http://localhost:8000/src/index.html",
     "dev": "NODE_ENV=dev parcel ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
